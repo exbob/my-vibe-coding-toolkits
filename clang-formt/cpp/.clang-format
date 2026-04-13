@@ -1,0 +1,43 @@
+# SPDX-License-Identifier: GPL-2.0
+#
+# clang-format configuration file. Intended for clang-format >= 11.
+#
+# For more information, see:
+#
+#   Documentation/dev-tools/clang-format.rst
+#   https://clang.llvm.org/docs/ClangFormat.html
+#   https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+#
+---
+Language: Cpp
+BasedOnStyle: Google
+
+# Indentation: Use Tab, do not use space indentation
+IndentWidth: 4
+TabWidth: 4
+UseTab: ForIndentation
+
+# Braces: Function left brace on its own line
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterFunction: true
+  AfterControlStatement: false
+  AfterClass: false
+  AfterStruct: false
+  AfterUnion: false
+  AfterEnum: false
+  BeforeCatch: false
+  BeforeElse: false
+
+# Pointer style: * close to variable name
+PointerAlignment: Right
+
+# Keep Google style
+ColumnLimit: 80
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+IndentCaseLabels: true
+SpaceBeforeParens: ControlStatements
+SpacesBeforeTrailingComments: 2
+MaxEmptyLinesToKeep: 1
