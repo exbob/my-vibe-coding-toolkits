@@ -7,6 +7,7 @@
 `rules/` 目录中的文件是规则文件。将它们复制到你的项目 `.cursor/rules` 目录后即可生效。
 
 - `c-cpp-coding-style.mdc`：C/C++ 编码风格的规则。
+- `git-workflaw.mdc`：git工作流的基本规则。
 
 ## 2. 技能
 
