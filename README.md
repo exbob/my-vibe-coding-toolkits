@@ -79,3 +79,18 @@ git subtree pull --prefix=skills/fireworks-tech-graph fireworks-remote main --sq
 来自<https://agentskills.so/skills/iofficeai-aionui-mermaid>
 
 指导用 Mermaid 文本语法在 Markdown 里写出可渲染的图表（流程图、时序图、类图等 23+ 种），并规范代码块格式、示例引用与保存方式，让文档里的示意图能直接随仓库预览与迭代。
+
+### 2.6 文档
+
+#### tech-doc-style-chinese
+
+面向中文技术文档、产品文案与界面文案的写作 Skill
+
+来自 <git@github.com:Fenng/tech-doc-style-chinese.git>
+
+```bash
+git subtree add --prefix=skills/tech-doc-style-chinese git@github.com:Fenng/tech-doc-style-chinese.git main --squash
+git remote add tech-doc-style-remote git@github.com:Fenng/tech-doc-style-chinese.git
+# 更新
+git subtree pull --prefix=skills/tech-doc-style-chinese tech-doc-style-remote main --squash
+```
