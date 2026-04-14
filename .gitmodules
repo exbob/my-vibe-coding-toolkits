@@ -1,9 +1,0 @@
-[submodule "skills/anthropics"]
-	path = skills/anthropics
-	url = git@github.com:anthropics/skills.git
-[submodule "skills/superpowers"]
-	path = skills/superpowers
-	url = git@github.com:obra/superpowers.git
-[submodule "skills/fireworks-tech-graph"]
-	path = skills/fireworks-tech-graph
-	url = git@github.com:yizhiyanhua-ai/fireworks-tech-graph.git
