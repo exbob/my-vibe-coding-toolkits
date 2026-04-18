@@ -6,6 +6,7 @@
 
 `rules/` 目录中的文件是规则文件。将它们复制到你的项目 `.cursor/rules` 目录后即可生效。
 
+- `behavioral-guidelines.mdc`：LLM的行为规范指引，约束常见 LLM 编码与交互失误，适用于所有 AI 代码变更场景。源自<https://github.com/forrestchang/andrej-karpathy-skills>。
 - `c-cpp-coding-style.mdc`：C/C++ 编码风格的规则。
 - `shell-script-style.mdc`：Shell 脚本编码风格规则（Bash 优先）。
 
