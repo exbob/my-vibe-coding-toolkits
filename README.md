@@ -71,3 +71,20 @@ bash 脚本的编程规范，编写，修改或者审查 bash 脚本时触发。
 面向中文技术文档、产品文案与界面文案的写作 Skill
 
 来自 <git@github.com:Fenng/tech-doc-style-chinese.git>
+
+## 3. 第三方 Skill 备份与手动更新
+
+为了避免上游 GitHub 仓库失效导致技能不可用，可将第三方 Skill 仓库备份到 `thirdpart/skills/`。
+
+仓库内提供脚本：`manage-skill-vendors.sh`
+
+- 添加仓库（会下载并写入 `thirdpart/skills/<name>`）：
+  - `bash manage-skill-vendors.sh add anthropics git@github.com:anthropics/skills.git main`
+- 更新全部已登记仓库：
+  - `bash manage-skill-vendors.sh update`
+- 更新单个仓库：
+  - `bash manage-skill-vendors.sh update anthropics`
+- 查看登记列表：
+  - `bash manage-skill-vendors.sh list`
+
+脚本会维护 `thirdpart/skills.sources.tsv`，记录来源仓库、分支、最后同步 commit 与同步时间，便于手动追踪更新状态。
