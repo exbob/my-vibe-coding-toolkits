@@ -50,6 +50,8 @@ bash 脚本的编程规范，编写，修改或者审查 bash 脚本时触发。
 
 一个 nothing 风格的前端设计技能（偏视觉与交互表达）。单色、重排版、工业感。
 
+来自 <git@github.com:dominikmartn/nothing-design-skill.git>
+
 ### 2.5 画图
 
 #### fireworks-tech-graph
