@@ -20,14 +20,7 @@
 
 官方/通用技能集合，覆盖文档处理、前端设计、MCP 构建、Web 测试与协作写作等常见场景。
 
-来自 <git@github.com:anthropics/skills.git>：
-
-``` bash
-git subtree add --prefix=skills/anthropics git@github.com:anthropics/skills.git main --squash
-git remote add anthropics-remote git@github.com:anthropics/skills.git
-# 更新
-git subtree pull --prefix=skills/anthropics anthropics-remote main --squash
-```
+来自 <git@github.com:anthropics/skills.git>
 
 ### 2.2 开发流程
 
@@ -35,14 +28,7 @@ git subtree pull --prefix=skills/anthropics anthropics-remote main --squash
 
 一套软件开发的流程与方法论技能集合，强调 TDD、调试、规划、并行子代理与交付收尾等工程实践。
 
-来自 <git@github.com:obra/superpowers.git>：
-
-```bash
-git subtree add --prefix=skills/superpowers git@github.com:obra/superpowers.git main --squash
-git remote add superpowers-remote git@github.com:obra/superpowers.git
-# 更新
-git subtree pull --prefix=skills/superpowers superpowers-remote main --squash
-```
+来自 <git@github.com:obra/superpowers.git>
 
 ### 2.3 代码实现
 
@@ -70,20 +56,13 @@ bash 脚本的编程规范，编写，修改或者审查 bash 脚本时触发。
 
 将自然语言描述转化为精美的 SVG 技术图，还可以到处 PNG 。主要用于架构图、流程图、时序图、Agent/记忆、概念图、UML等。
 
-来自 <git@github.com:yizhiyanhua-ai/fireworks-tech-graph.git>：
-
-```bash
-git subtree add --prefix=skills/fireworks-tech-graph git@github.com:yizhiyanhua-ai/fireworks-tech-graph.git main --squash
-git remote add fireworks-remote git@github.com:yizhiyanhua-ai/fireworks-tech-graph.git
-# 更新
-git subtree pull --prefix=skills/fireworks-tech-graph fireworks-remote main --squash
-```
+来自 <git@github.com:yizhiyanhua-ai/fireworks-tech-graph.git>
 
 #### mermaid
 
-来自<https://agentskills.so/skills/iofficeai-aionui-mermaid>
-
 指导用 Mermaid 文本语法在 Markdown 里写出可渲染的图表（流程图、时序图、类图等 23+ 种），并规范代码块格式、示例引用与保存方式，让文档里的示意图能直接随仓库预览与迭代。
+
+来自 <https://agentskills.so/skills/iofficeai-aionui-mermaid>
 
 ### 2.6 文档
 
@@ -92,10 +71,3 @@ git subtree pull --prefix=skills/fireworks-tech-graph fireworks-remote main --sq
 面向中文技术文档、产品文案与界面文案的写作 Skill
 
 来自 <git@github.com:Fenng/tech-doc-style-chinese.git>
-
-```bash
-git subtree add --prefix=skills/tech-doc-style-chinese git@github.com:Fenng/tech-doc-style-chinese.git main --squash
-git remote add tech-doc-style-remote git@github.com:Fenng/tech-doc-style-chinese.git
-# 更新
-git subtree pull --prefix=skills/tech-doc-style-chinese tech-doc-style-remote main --squash
-```
