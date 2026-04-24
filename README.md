@@ -1,92 +1,51 @@
-# 我的 Vibe Coding 工具集
+# My Vibe Coding Toolkits
 
-面向 AI 编程的一组工具与技能集合。主要在 cursor 上使用。
+一个面向 AI 编程工作流的本地工具库，主要用于 Cursor 场景，包含：
 
-## 1. 规则
+- 可复用的 `skills`（流程方法、开发规范、调试与协作实践）
+- 会话启动 `hooks`（自动注入上下文）
+- 辅助 `rules`（编码与行为约束）
+- 可选 `agents` 提示模板
 
-`rules/` 目录中的文件是规则文件。将它们复制到你的项目 `.cursor/rules` 目录后即可生效。
+当前仓库以“技能沉淀 + 会话增强”为核心，不是单一应用项目。
 
-- `behavioral-guidelines.mdc`：LLM的行为规范指引，约束常见 LLM 编码与交互失误，适用于所有 AI 代码变更场景。源自<https://github.com/forrestchang/andrej-karpathy-skills>。
-- `c-cpp-coding-style.mdc`：C/C++ 编码风格的规则。
-- `shell-script-style.mdc`：Shell 脚本编码风格规则（Bash 优先）。
+## 已收录技能（skills）
 
-## 2. 技能
+> 每个技能目录下都有 `SKILL.md`，用于定义触发条件和执行方法。
 
-选择相应的 skill 文件夹，复制到 `~/.cursor/skills` 目录后生效。
+- `using-superpowers`：技能体系入口与调用原则
+- `verification-before-completion`：完成前验证流程
+- `writing-skills`：如何设计、编写、测试技能
+- `using-git-worktrees`：多工作树并行开发
+- `receiving-code-review` / `requesting-code-review`：代码评审协作
+- `systematic-debugging`：系统化排障方法
+- `test-driven-development`：TDD 工作流
+- `subagent-driven-development`：子代理驱动开发
+- `dispatching-parallel-agents`：并行分派策略
+- `executing-plans` / `writing-plans`：计划执行与撰写
+- `brainstorming`：结构化发散与收敛
+- `finishing-a-development-branch`：开发分支收尾流程
+- `git-commit`：提交规范与实践
+- `bash-scripting`：Shell 脚本实践
+- `writing-linux-c-app`：Linux C 项目实践参考
 
-### 2.1 通用
+## Hooks 说明
 
-#### anthropics
+`hooks/` 当前包含 Cursor 会话启动相关文件：
 
-官方/通用技能集合，覆盖文档处理、前端设计、MCP 构建、Web 测试与协作写作等常见场景。
+- `hooks/hooks.json`：Cursor hooks 配置
+- `hooks/session-start`：会话启动脚本，注入 `using-superpowers` 相关上下文
 
-来自 <git@github.com:anthropics/skills.git>
+## 在 Cursor 中使用（建议）
 
-### 2.2 开发流程
+1. 将本仓库作为你的本地工具库维护。
+2. 在需要的项目中引用 `skills`、`rules`、`hooks` 内容（按你的工作流可复制或软链接）。
+3. 将 `hooks/hooks.json` 的配置合并到你的 Cursor hooks 配置中。
+4. 保持 `hooks/session-start` 可执行，并保证其可读取 `skills/using-superpowers/SKILL.md`。
 
-#### superpowers
+## 维护建议
 
-一套软件开发的流程与方法论技能集合，强调 TDD、调试、规划、并行子代理与交付收尾等工程实践。
-
-来自 <git@github.com:obra/superpowers.git>
-
-### 2.3 代码实现
-
-#### writing-linux-c-app
-
-Linux C 软件项目规范，先做项目类型判定（小型/复杂/其他），再按对应参考模板执行目录、构建、日志与配置规范。
-
-#### bash-scripting
-
-bash 脚本的编程规范，编写，修改或者审查 bash 脚本时触发。
-
-#### git-commit
-
-用于规范 Git commit message，采用 Conventional Commits 格式，支持中英文提交信息，并提供 `.gitmessage` 模板与类型选择规则。
-
-### 2.4 前端设计
-
-#### nothing-design-skill
-
-一个 nothing 风格的前端设计技能（偏视觉与交互表达）。单色、重排版、工业感。
-
-来自 <git@github.com:dominikmartn/nothing-design-skill.git>
-
-### 2.5 画图
-
-#### fireworks-tech-graph
-
-将自然语言描述转化为精美的 SVG 技术图，还可以到处 PNG 。主要用于架构图、流程图、时序图、Agent/记忆、概念图、UML等。
-
-来自 <git@github.com:yizhiyanhua-ai/fireworks-tech-graph.git>
-
-#### mermaid
-
-指导用 Mermaid 文本语法在 Markdown 里写出可渲染的图表（流程图、时序图、类图等 23+ 种），并规范代码块格式、示例引用与保存方式，让文档里的示意图能直接随仓库预览与迭代。
-
-来自 <https://agentskills.so/skills/iofficeai-aionui-mermaid>
-
-### 2.6 文档
-
-#### tech-doc-style-chinese
-
-面向中文技术文档、产品文案与界面文案的写作 Skill
-
-来自 <git@github.com:Fenng/tech-doc-style-chinese.git>
-
-## 3. 第三方 Skill 备份与手动更新
-
-为了避免上游 GitHub 仓库失效导致技能不可用，可将第三方 Skill 仓库备份到 `thirdpart/skills/`。
-
-仓库内提供脚本：`manage-skill-vendors.sh`
-
-- 添加仓库（会下载并写入 `thirdpart/skills/<name>`）：
-  - `bash manage-skill-vendors.sh add anthropics git@github.com:anthropics/skills.git main`
-- 更新全部已登记仓库：
-  - `bash manage-skill-vendors.sh update`
-- 更新单个仓库：
-  - `bash manage-skill-vendors.sh update anthropics`
-- 查看登记列表：
-  - `bash manage-skill-vendors.sh list`
-
-脚本会维护 `thirdpart/skills.sources.tsv`，记录来源仓库、分支、最后同步 commit 与同步时间，便于手动追踪更新状态。
+- 新增技能时，遵循现有目录命名风格（短横线、语义清晰）。
+- 技能说明优先写“何时使用”，再写“如何执行”。
+- 规则文件放 `rules/`，技能放 `skills/`，避免混放。
+- 对脚本和规则变更，建议同步更新本 README，确保文档与仓库状态一致。
