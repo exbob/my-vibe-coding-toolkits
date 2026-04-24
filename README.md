@@ -43,6 +43,21 @@
 3. 将 `hooks/hooks.json` 的配置合并到你的 Cursor hooks 配置中。
 4. 保持 `hooks/session-start` 可执行，并保证其可读取 `skills/using-superpowers/SKILL.md`。
 
+## 一键安装命令
+
+```bash
+rm -rf /tmp/my-vibe-coding-toolkits && \
+git clone git@github.com:exbob/my-vibe-coding-toolkits.git /tmp/my-vibe-coding-toolkits && \
+mkdir -p .cursor && \
+cp -rf /tmp/my-vibe-coding-toolkits/agents /tmp/my-vibe-coding-toolkits/hooks /tmp/my-vibe-coding-toolkits/skills /tmp/my-vibe-coding-toolkits/rules .cursor/ && \
+cp -f /tmp/my-vibe-coding-toolkits/clang-formt/c/.clang-format . && \
+mv -f .cursor/hooks/hooks.json .cursor/hooks.json
+```
+
+说明：
+- 若目标目录不存在会自动创建（如 `.cursor`）。
+- 若存在同名文件或目录会直接覆盖。
+
 ## 维护建议
 
 - 新增技能时，遵循现有目录命名风格（短横线、语义清晰）。
