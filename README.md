@@ -27,7 +27,8 @@
 - `finishing-a-development-branch`：开发分支收尾流程
 - `git-commit`：提交规范与实践
 - `bash-scripting`：Shell 脚本实践
-- `writing-linux-c-app`：Linux C 项目实践参考
+- `writing-linux-c-small-app`：Linux C 小型项目模板实践
+- `writing-linux-c-complex-app`：Linux C 复杂项目模板实践
 
 ## Hooks 说明
 
@@ -68,12 +69,12 @@ mv -f .cursor/hooks/hooks.json .cursor/hooks.json
 
 2. **先做方案，不直接开写**
    - 用 `brainstorming` 先澄清需求与成功标准，再确定技术路线。
-   - 进入实施前，用 `writing-linux-c-app` 先完成 Linux C 项目定型（小型 / 复杂 / 其他）。
+   - 进入实施前，按项目形态选择 `writing-linux-c-small-app` 或 `writing-linux-c-complex-app`。
    - 若任务是多步骤交付，再用 `writing-plans` 形成可执行计划（含文件、测试、验收命令）。
 
-3. **Linux C 项目类型判定（关键分叉）**
-   - 使用 `writing-linux-c-app` 先让用户在“小型 / 复杂 / 其他”中做明确选择。
-   - 选定后再进入对应模板/约定，避免未定型就开始搭建工程。
+3. **Linux C 模板直达（关键分叉）**
+   - 小型工具类/命令行主导项目：使用 `writing-linux-c-small-app`，直接复用 `small-app/` 模板。
+   - 配置驱动/多模块服务类项目：使用 `writing-linux-c-complex-app`，直接复用 `complex-app/` 模板。
 
 4. **隔离开发环境**
    - 使用 `using-git-worktrees` 创建隔离工作目录，避免污染主工作区。
